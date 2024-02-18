@@ -43,9 +43,9 @@
     "jest-environment-jsdom": "^29.5.0",
     "msw": "^1.2.1",
     "parcel": "^2.8.3",
-    "playwright": "^1.33.0",
+    "playwright": "^1.41.2",
     "process": "^0.11.10",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.4"
   },
   "dependencies": {

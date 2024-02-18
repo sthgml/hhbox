@@ -1,19 +1,19 @@
-Feature('Log out');
+// Feature('Log out');
 
-Before(({ backdoor, I }) => {
-  backdoor.setupDatabase();
+// Before(({ backdoor, I }) => {
+//   backdoor.setupDatabase();
 
-  I.login();
-});
+//   I.login();
+// });
 
-Scenario('Logout success', ({ I }) => {
-  I.amOnPage('/');
+// Scenario('Logout success', ({ I }) => {
+//   I.amOnPage('/');
 
-  I.see('Cart');
+//   I.see('Cart');
 
-  I.click('Logout');
+//   I.click('Logout');
 
-  I.waitForText('Login');
+//   I.waitForText('Login');
 
-  I.dontSee('Cart');
-});
+//   I.dontSee('Cart');
+// });

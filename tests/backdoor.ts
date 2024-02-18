@@ -1,7 +1,7 @@
 const { I } = inject();
 
 const BACKDOOR_BASE_URL = process.env.BACKDOOR_BASE_URL
-                          || 'http://localhost:3000/backdoor';
+                          || 'http://localhost:3000';
 
 export = {
   setupDatabase() {
