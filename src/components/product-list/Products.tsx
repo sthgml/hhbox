@@ -19,7 +19,12 @@ const Container = styled.div`
   li {
     width: 20%;
     padding: 1rem; 
-    word-break: break-all;
+
+    p {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 
   a {

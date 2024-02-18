@@ -1,18 +1,20 @@
 // 어떤 페이지를 들어갔을 때 실행된다. 그 책임을 얘가 갖는다.
 
-import { useFetch } from 'usehooks-ts';
+import { useEffect } from 'react';
+import { container } from 'tsyringe';
+import { useStore } from 'usestore-ts';
 
-import { ProductSummary } from '../types';
-
-const BASE_URL = 'https://shop-demo-api-01.fly.dev';
+import ProductsStore from '../stores/ProductsStore';
 
 export default function useFetchProducts() {
-  type Data = {
-    products: ProductSummary[];
-  }
+  const store = container.resolve(ProductsStore);
 
-  const { data } = useFetch<Data>(`${BASE_URL}/products`);
+  const [{ products }] = useStore(store);
 
-  return data?.products ?? [];
+  useEffect(() => {
+    store.fetchProducts();
+  }, []);
+
+  return { products };
   // return data?.products ?? [];
 }
