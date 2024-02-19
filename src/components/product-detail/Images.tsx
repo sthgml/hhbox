@@ -1,12 +1,24 @@
 import React from 'react';
-import { Image } from '../../types';
+import styled from 'styled-components';
 
-export default function Images({ images }: {
-  images: Image[];
-}) {
+import { Image as ImageType } from '../../types';
+
+const Thumbnail = styled.img.attrs({
+  alt: 'Product Image',
+})`
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+`;
+
+type ImageProps = {
+  images: ImageType[];
+}
+
+export default function Images({ images }: ImageProps) {
   return (
     <div>
-      <img src={images[0].url} alt="" />
+      <Thumbnail src={images[0].url} />
     </div>
   );
 }

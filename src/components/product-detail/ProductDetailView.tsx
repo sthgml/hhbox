@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import useProductDetailStore from '../../hooks/useProductDetailStore';
 import Images from './Images';
+import Description from './Description';
 
 const Container = styled.div`
   display: flex;
@@ -30,7 +31,8 @@ export default function ProductDetailView() {
       <article>
         <h2>{product.name}</h2>
         {/* <AddToCartForm /> */}
-        {/* <Description value={product.description} /> */}
+        <Description value={product.description} />
+
       </article>
     </Container>
   );
