@@ -15,10 +15,14 @@ export default class ProductsStore {
   products: ProductSummary[] = [];
 
   @Action()
-  async fetchProducts() {
+  async fetchProducts({ categoryId }: {
+    categoryId?: string;
+  }) {
     this.setProducts([]);
 
-    const { data } = await axios.get(`${BASE_URL}/products`);
+    const { data } = await axios.get(`${BASE_URL}/products`, {
+      params: { categoryId },
+    });
     const { products } = data;
 
     this.setProducts(products);

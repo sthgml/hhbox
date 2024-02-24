@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEffect, useRef } from 'react';
 import { ProductSummary } from '../../types';
 import numberFormat from '../../utils/numberFormat';
 
@@ -17,7 +18,6 @@ const Thumbnail = styled.img.attrs({
 export default function Product({ product }: ProductProps) {
   return (
     <div>
-      {/* <div>{JSON.stringify(product)}</div> */}
       {product.category.name}
       <Thumbnail src={product.thumbnail.url} />
       <div>
